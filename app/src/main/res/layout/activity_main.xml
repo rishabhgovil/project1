@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="@drawable/bored"
+    tools:context="com.example.rishabh.gettinbored.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gettin Bored?"
+        android:textSize="60sp"
+        android:id="@+id/textview"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnnews"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="NEWS PORTAL"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/btncricket"
+        android:layout_toStartOf="@+id/btncricket" />
+
+    <Button
+        android:id="@+id/btncricket"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Cricket Portal"
+        android:layout_alignBaseline="@+id/btnnews"
+        android:layout_alignBottom="@+id/btnnews"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp" />
+
+    <Button
+        android:id="@+id/btntv"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:text="TV sitcom"
+        android:layout_below="@+id/btnnews"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
