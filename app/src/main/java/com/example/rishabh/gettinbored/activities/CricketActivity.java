@@ -38,7 +38,7 @@ public class CricketActivity extends AppCompatActivity {
 
         Log.d(TAG, "onCreate: created");
         Retrofit retrofit=new Retrofit.Builder()
-                .baseUrl("http://cricapi.com/")
+                .baseUrl("http://cricapi.com/api/matches/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         final crickApi crickapi = retrofit.create(crickApi.class);
@@ -48,6 +48,7 @@ public class CricketActivity extends AppCompatActivity {
             public void onResponse(Call<cricketmodel> call, Response<cricketmodel> response) {
                 cricketadapter = new cricketAdapter(CricketActivity.this,response.body().getMatches());
                 rvcricket.setAdapter(cricketadapter);
+                cricketadapter.updatematches(response.body().getMatches());
                 Log.d(TAG, "onResponse: onresponse");
             }
 

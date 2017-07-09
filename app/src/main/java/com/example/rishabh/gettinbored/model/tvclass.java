@@ -10,7 +10,7 @@ public class tvclass {
     Integer total;
     Integer page;
     Integer pages;
-    tv_shows tv_shows;
+    ArrayList<tv_shows> tv_shows;
 
     public Integer getTotal() {
         return total;
@@ -24,11 +24,11 @@ public class tvclass {
         return pages;
     }
 
-    public com.example.rishabh.gettinbored.model.tv_shows getTv_shows() {
+    public ArrayList<com.example.rishabh.gettinbored.model.tv_shows> getTv_shows() {
         return tv_shows;
     }
 
-    public tvclass(Integer total, Integer page, Integer pages, com.example.rishabh.gettinbored.model.tv_shows tv_shows) {
+    public tvclass(Integer total, Integer page, Integer pages, ArrayList<com.example.rishabh.gettinbored.model.tv_shows> tv_shows) {
 
         this.total = total;
         this.page = page;

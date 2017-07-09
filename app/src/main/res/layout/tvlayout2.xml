@@ -13,42 +13,61 @@
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvid"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Some id"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvname"
+            android:textStyle="bold"
             android:padding="10dp"
-            android:textSize="25sp"
+            android:textSize="40sp"
             android:text="name"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvpermalink"
+            android:textStyle="bold"
+            android:textSize="30sp"
             android:padding="10dp"
             android:text="permalink"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvcountry"
+            android:textStyle="bold"
+            android:textSize="30sp"
             android:padding="10dp"
-            android:text="country:"/>
+            android:text="country"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvnetwork"
+            android:textStyle="bold"
+            android:textSize="30sp"
             android:padding="10dp"
             android:text="network"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvstatus"
+            android:textStyle="bold"
+            android:textSize="30sp"
             android:padding="10dp"
             android:text="status"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvimage"
+            android:textColor="@android:color/white"
+            android:textStyle="italic"
+            android:textSize="25dp"
             android:padding="10dp"
             android:text="thumbnail"/>
 

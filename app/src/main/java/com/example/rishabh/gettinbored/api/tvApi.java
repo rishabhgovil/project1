@@ -13,10 +13,7 @@ import retrofit2.http.Query;
  */
 
 public interface tvApi {
-    @GET("api/most-popular{page}/api/most-popular?page=:page")
-    Call<ArrayList<tvclass>> getshows();
+    @GET("/api/most-popular?page=1/api/most-popular")
+    Call<tvclass> getshows();
 
-    @GET("api/most-popular{page}/api/most-popular?page=:page")
-    Call<ArrayList<tvclass>> getshowforpage(
-            @Query("page") int page);
 }

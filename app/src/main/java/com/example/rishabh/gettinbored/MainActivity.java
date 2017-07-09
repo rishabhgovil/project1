@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.example.rishabh.gettinbored.activities.CricketActivity;
 import com.example.rishabh.gettinbored.activities.NewsActivity;
-import com.example.rishabh.gettinbored.activities.TVActivity;
+import com.example.rishabh.gettinbored.activities.TV2Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btntv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent tv = new Intent(MainActivity.this,TVActivity.class);
+                Intent tv = new Intent(MainActivity.this,TV2Activity.class);
                 startActivity(tv);
             }
         });
