@@ -1,5 +1,6 @@
 package com.example.rishabh.gettinbored.activities;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -42,14 +43,7 @@ public class NewsActivity extends AppCompatActivity {
         rvnews.setLayoutManager(new LinearLayoutManager(NewsActivity.this));
         newsadapter = new newsAdapter(this,new ArrayList<articles>());
         Log.d(TAG, "onCreate: vdv");
-        newsadapter.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(String itemid) {
-                    String togo=newsurl.getText().toString();
-                Intent web = new Intent(Intent.ACTION_VIEW, Uri.parse(togo));
-                startActivity(web);
-            }
-        });
+
 
 
         Retrofit retrofit=new Retrofit.Builder()
@@ -66,6 +60,20 @@ public class NewsActivity extends AppCompatActivity {
 
                 newsadapter=new newsAdapter(NewsActivity.this,response.body().getArticles());
                 rvnews.setAdapter(newsadapter);
+                newsadapter.setOnItemClickListener(new OnItemClickListener() {
+                    @Override
+                    public void onItemClick(String itemid) {
+                        try{
+                            Intent web = new Intent(Intent.ACTION_VIEW, Uri.parse(itemid));
+                        startActivity(web);
+                        }
+                        catch(ActivityNotFoundException ae)
+                        {
+                            Toast.makeText(NewsActivity.this, "activity not found", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
             }
 
             @Override

@@ -13,5 +13,5 @@ import retrofit2.http.GET;
 
 public interface crickApi {
     @GET("api/matches/DGireQ2BaMVOzwmDitNfLNqjY1u1")
-    Call<ArrayList<cricketmodel>> getstats();
+    Call<cricketmodel> getstats();
 }

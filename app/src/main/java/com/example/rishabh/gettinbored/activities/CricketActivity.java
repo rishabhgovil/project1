@@ -11,6 +11,7 @@ import com.example.rishabh.gettinbored.R;
 import com.example.rishabh.gettinbored.adapter.cricketAdapter;
 import com.example.rishabh.gettinbored.api.crickApi;
 import com.example.rishabh.gettinbored.model.cricketmodel;
+import com.example.rishabh.gettinbored.model.matches;
 
 import java.util.ArrayList;
 
@@ -32,33 +33,30 @@ public class CricketActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cricket);
         rvcricket=(RecyclerView)findViewById(R.id.rvcricket);
         rvcricket.setLayoutManager(new LinearLayoutManager(CricketActivity.this));
-        cricketadapter = new cricketAdapter(CricketActivity.this,new ArrayList<cricketmodel>());
-        Log.d(TAG, "onCreate: hj");
+        cricketadapter = new cricketAdapter(this, new ArrayList<matches>());
+
+
+        Log.d(TAG, "onCreate: created");
         Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl("http://cricapi.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         final crickApi crickapi = retrofit.create(crickApi.class);
 
-        Callback<ArrayList<cricketmodel>> postcallback3 = new Callback<ArrayList<cricketmodel>>() {
+        crickapi.getstats().enqueue(new Callback<cricketmodel>() {
             @Override
-            public void onResponse(Call<ArrayList<cricketmodel>> call, Response<ArrayList<cricketmodel>> response) {
+            public void onResponse(Call<cricketmodel> call, Response<cricketmodel> response) {
+                cricketadapter = new cricketAdapter(CricketActivity.this,response.body().getMatches());
                 rvcricket.setAdapter(cricketadapter);
                 Log.d(TAG, "onResponse: onresponse");
-                cricketadapter.updatematches(response.body());
             }
 
             @Override
-            public void onFailure(Call<ArrayList<cricketmodel>> call, Throwable t) {
+            public void onFailure(Call<cricketmodel> call, Throwable t) {
+                Log.d(TAG, "onFailure: "+ t);
                 Toast.makeText(CricketActivity.this, "no matches today", Toast.LENGTH_SHORT).show();
             }
-        };
-        int userIdReceived = getIntent().getIntExtra("userId", -1);
-        if (userIdReceived != -1) {
-            crickapi.getstats().enqueue(postcallback3);
-        }
-        else
-            crickapi.getstats().enqueue(postcallback3);
+        });
 
 
     }

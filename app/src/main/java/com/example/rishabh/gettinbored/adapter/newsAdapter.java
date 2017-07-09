@@ -48,7 +48,7 @@ public class newsAdapter extends RecyclerView.Adapter<newsAdapter.NewsViewHolder
         return new NewsViewHolder(itemview);
     }
     @Override
-    public void onBindViewHolder(newsAdapter.NewsViewHolder holder, int position) {
+    public void onBindViewHolder(final newsAdapter.NewsViewHolder holder, int position) {
         final articles A=Articles.get(position);
 
         holder.newsauthor.setText(A.getAuthor());

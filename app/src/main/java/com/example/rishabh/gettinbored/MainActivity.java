@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.rishabh.gettinbored.activities.CricketActivity;
-import com.example.rishabh.gettinbored.activities.FoodActivity;
 import com.example.rishabh.gettinbored.activities.NewsActivity;
 import com.example.rishabh.gettinbored.activities.TVActivity;
 

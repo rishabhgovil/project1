@@ -18,23 +18,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:textStyle="bold"
         android:id="@+id/team1"
-        android:textSize="25dp"
+        android:textSize="30dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:fontFamily="serif"
         android:text="Team 1 name"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:textColor="@android:color/holo_green_dark"
         android:id="@+id/team2"
-        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textSize="30dp"
         android:text="Team 2 name"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:textColor="@android:color/background_dark"
         android:id="@+id/unique_id"
-        android:textSize="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:text="Match id"/>
 
     <TextView
@@ -42,14 +50,20 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:id="@+id/date"
-        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
         android:text="Date"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+
+        android:fontFamily="serif"
+        android:textColor="@android:color/black"
         android:id="@+id/matchStarted"
-        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:text="Match started"/>
 
 </LinearLayout>

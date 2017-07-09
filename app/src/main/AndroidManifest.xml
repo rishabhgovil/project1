@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".activities.NewsActivity" />
         <activity android:name=".activities.CricketActivity" />
-        <activity android:name=".activities.FoodActivity" />
         <activity android:name=".activities.TVActivity" />
         <activity android:name=".activities.TV2Activity"></activity>
     </application>

@@ -2,11 +2,13 @@ package com.example.rishabh.gettinbored.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 /**
  * Created by RISHABH on 07-07-2017.
  */
 
-public class matches {
+public class matches  {
     Integer unique_id;
     String date;
     String squad;

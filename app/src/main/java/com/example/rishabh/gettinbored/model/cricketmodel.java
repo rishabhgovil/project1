@@ -8,14 +8,13 @@ import java.util.ArrayList;
  */
 
 public class cricketmodel {
-    matches matches;
+    ArrayList<matches> matches;
 
-
-    public cricketmodel(matches matches) {
+    public cricketmodel(ArrayList<com.example.rishabh.gettinbored.model.matches> matches) {
         this.matches = matches;
     }
 
-    public matches getMatches() {
+    public ArrayList<com.example.rishabh.gettinbored.model.matches> getMatches() {
         return matches;
     }
 }

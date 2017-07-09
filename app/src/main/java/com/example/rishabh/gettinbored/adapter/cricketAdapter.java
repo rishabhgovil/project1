@@ -22,13 +22,12 @@ import java.util.ArrayList;
 public class cricketAdapter extends RecyclerView.Adapter<cricketAdapter.CricketViewHolder> {
 
     Context context;
-    ArrayList<cricketmodel> cricketmodelArrayList;
+    ArrayList<matches> matchesArrayList;
     public static final String TAG="hi";
 
-    public cricketAdapter(Context context, ArrayList<cricketmodel> cricketmodelArrayList) {
+    public cricketAdapter(Context context, ArrayList<matches> matchesArrayList) {
         this.context = context;
-        this.cricketmodelArrayList = cricketmodelArrayList;
-        Log.d(TAG, "cricketAdapter: constructor called");
+        this.matchesArrayList = matchesArrayList;
     }
 
     @Override
@@ -38,25 +37,25 @@ public class cricketAdapter extends RecyclerView.Adapter<cricketAdapter.CricketV
         Log.d(TAG, "onCreateViewHolder: created");
         return new CricketViewHolder(itemview);
     }
-    public void updatematches(ArrayList<cricketmodel> cricketmodelArrayList) {
-        this.cricketmodelArrayList = cricketmodelArrayList;
+    public void updatematches(ArrayList<matches> matchesArrayList) {
+        this.matchesArrayList = matchesArrayList;
         notifyDataSetChanged();
     }
 
     @Override
     public void onBindViewHolder(CricketViewHolder holder, int position) {
-        final cricketmodel cm=cricketmodelArrayList.get(position);
-        holder.team1.setText(cm.getMatches().getTeam1());
+        final matches cm=matchesArrayList.get(position);
+        holder.team1.setText(cm.getTeam1());
         Log.d(TAG, "onBindViewHolder: binded");
-        holder.team2.setText(cm.getMatches().getTeam2());
-        holder.unique_id.setText(String.valueOf(cm.getMatches().getUnique_id()));
-        holder.date.setText(cm.getMatches().getDate());
-        holder.matchStarted.setText(cm.getMatches().getMatchStarted());
+        holder.team2.setText(cm.getTeam2());
+        holder.unique_id.setText(String.valueOf(cm.getUnique_id()));
+        holder.date.setText(cm.getDate());
+        holder.matchStarted.setText(cm.getMatchStarted());
     }
 
     @Override
     public int getItemCount() {
-        return cricketmodelArrayList.size();
+        return 1;
     }
 
     public class CricketViewHolder extends RecyclerView.ViewHolder{
